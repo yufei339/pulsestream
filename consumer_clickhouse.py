@@ -9,7 +9,12 @@ classifier = pipeline("sentiment-analysis", model="ProsusAI/finbert")
 print("模型加载完成！\n")
 
 # 连接 ClickHouse
-ch = clickhouse_connect.get_client(host="localhost", port=8123)
+ch = clickhouse_connect.get_client(
+    host="localhost",
+    port=8123,
+    username="default",
+    password="pulse123"
+)
 print("已连接 ClickHouse")
 
 # 连接 Kafka
